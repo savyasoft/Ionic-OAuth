@@ -1,18 +1,4 @@
 angular.module('hellofacebook', [])
-    .run(function() {
-        var FACEBOOK_CLIENT_ID = "1476555565891036",
-            WINDOWS_CLIENT_ID = "",
-            GOOGLE_CLIENT_ID = "";
-
-        hello.init({
-            facebook: FACEBOOK_CLIENT_ID,
-            windows: WINDOWS_CLIENT_ID,
-            google: GOOGLE_CLIENT_ID
-        }, {
-            redirect_uri: 'http://localhost:8888/#/home'
-        });
-
-    })
     .constant('serverurl', 'http://localhost:3000/')
     .config(function() {
 
