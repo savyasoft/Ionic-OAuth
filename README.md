@@ -8,14 +8,12 @@ OAuth based authentication for Ionic Apps
 
 #Install
 ==========
-
 ###Bower Package
 
 ```
 bower install ionic-oauth;
 ```
 This command installs hellofacebook along with hellojs ( http://adodson.com/hello.js ).
-
 
 #usage
 ======
@@ -36,3 +34,18 @@ function sampleCtrl( $scope , hellofacebook  ){
 
 }
 ```
+
+#REST method
+============
+'hellofacebook.login()' tries to login facebook and get the user profile.
+ With the userprofile the method calls our REST method of application API.
+ 
+ Example REST method for express application :
+ 
+ ```
+  app.post("/facebooklogin",function( req , res ){
+       // crete the user with retrieved user profile
+       //create jwt token with _id of created user , send the token to the client
+  });
+  ```
+
