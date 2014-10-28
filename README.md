@@ -7,7 +7,6 @@ OAuth based authentication for Ionic Apps
 
 
 #Install
-==========
 ###Bower Package
 
 ```
@@ -15,8 +14,14 @@ bower install ionic-oauth;
 ```
 This command installs hellofacebook along with hellojs ( http://adodson.com/hello.js ).
 
+#Setup
+
+* Create facebook application for this authentication.(https://developers.facebook.com/docs/web/tutorials/scrumptious/register-facebook-application/)
+
+* Open ionic-oauth/dist/ionic-oauth.js file from bower-components and assign the facebook application client Id in hello.init({});  
+
+
 #usage
-======
 ```
 var app = angular.module('sampleapp',[ 'hellofacebook'  ]);
 function sampleCtrl( $scope , hellofacebook  ){
@@ -48,4 +53,6 @@ function sampleCtrl( $scope , hellofacebook  ){
        //create jwt token with _id of created user , send the token to the client
   });
   ```
+
+
 
