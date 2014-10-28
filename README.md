@@ -2,3 +2,50 @@ Ionic-OAuth
 ===========
 
 OAuth based authentication for Ionic Apps
+
+"hellofacebook" is an angular service provideded by Ionic-OAuth. This service provides two methods "login" and "logout" for facebook in our application.
+
+
+#Install
+==========
+###Bower Package
+
+```
+bower install ionic-oauth;
+```
+This command installs hellofacebook along with hellojs ( http://adodson.com/hello.js ).
+
+#usage
+======
+```
+var app = angular.module('sampleapp',[ 'hellofacebook'  ]);
+function sampleCtrl( $scope , hellofacebook  ){
+
+  $scope.facebookLogin = function(){
+         hellofacebook.login().then(function(data){
+           // success callback
+         },function(err){
+           // failure callback
+         })
+
+ $scope.facebooklogout = function(){
+    hellofacebook.logout();
+  }
+
+}
+```
+
+#REST method
+============
+'hellofacebook.login()' tries to login facebook and get the user profile.
+ With the userprofile the method calls our REST method of application API.
+ 
+ Example REST method for express application :
+ 
+ ```
+  app.post("/facebooklogin",function( req , res ){
+       // crete the user with retrieved user profile
+       //create jwt token with _id of created user , send the token to the client
+  });
+  ```
+
