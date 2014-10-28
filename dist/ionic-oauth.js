@@ -2,7 +2,7 @@ angular.module('hellofacebook', [])
     .constant('serverurl', 'http://localhost:3000/')
     .config(function() {
 
-        var FACEBOOK_CLIENT_ID = "1476555565891036",
+        var FACEBOOK_CLIENT_ID = "",
             WINDOWS_CLIENT_ID = "",
             GOOGLE_CLIENT_ID = "";
 
