@@ -41,7 +41,6 @@ function sampleCtrl( $scope , hellofacebook  ){
 ```
 
 #REST method
-============
 'hellofacebook.login()' tries to login facebook and get the user profile.
  With the userprofile the method calls our REST method of application API.
  

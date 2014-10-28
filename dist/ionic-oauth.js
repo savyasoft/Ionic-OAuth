@@ -11,7 +11,8 @@ angular.module('hellofacebook', [])
             windows: WINDOWS_CLIENT_ID,
             google: GOOGLE_CLIENT_ID
         }, {
-            redirect_uri: 'http://localhost:8888/#/home'
+            scope : "email",
+            redirect_uri: 'http://localhost:8100/#/home'
         });
 
     })
@@ -27,15 +28,17 @@ angular.module('hellofacebook', [])
             hello.on('auth.login', function(auth, $q) {
                 hello(auth.network).api('/me').then(function(r) {
                     $http.post(serverurl + 'facebooklogin', {
-                        username: r.username,
-                        name: r.name,
+                        username: r.name,
+                        //name: r.name,
                         email: r.email,
                         facebook: r
                     })
                         .success(function(response) {
+                            hello.off("auth.login");
                             deferred.resolve(response);
                         })
                         .error(function(reason) {
+                            hello.off("auth.login");
                             deferred.reject(reason);
                         });
                 });
