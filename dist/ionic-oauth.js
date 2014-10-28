@@ -43,6 +43,7 @@ angular.module('hellofacebook', [])
 
             hello("facebook").login().then(function() {}, function(e) {
                 alert("Signin error: " + e.error.message);
+                deferred.reject(e.error.message);
             });
 
             return deferred.promise;
