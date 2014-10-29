@@ -19,6 +19,8 @@ This command installs hellofacebook along with hellojs ( http://adodson.com/hell
 * Create facebook application for this authentication.(https://developers.facebook.com/docs/web/tutorials/scrumptious/register-facebook-application/)
 
 * Open ionic-oauth/dist/ionic-oauth.js file from bower-components and assign the facebook application client Id in hello.init({});  
+* redirect_uri: 'http://localhost:8100/' this is to run the application in browser using ionic serve , that runs at port 8100.
+* redirect_uri: 'http://localhost'  this is to run the application in the device.
 
 
 #usage
