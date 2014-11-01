@@ -12,7 +12,7 @@ OAuth based authentication for Ionic Apps
 ```
 bower install ionic-oauth;
 ```
-This command installs hellofacebook along with hellojs ( http://adodson.com/hello.js ).
+This command installs ionic-oauth along with hellojs ( http://adodson.com/hello.js ).
 
 #Setup
 
@@ -25,25 +25,25 @@ This command installs hellofacebook along with hellojs ( http://adodson.com/hell
 
 #usage
 ```
-var app = angular.module('sampleapp',[ 'hellofacebook'  ]);
+var app = angular.module('sampleapp',[ 'sociallogin'  ]);
 function sampleCtrl( $scope , hellofacebook  ){
 
-  $scope.facebookLogin = function(){
-         hellofacebook.login().then(function(data){
+  $scope.socialLogin = function( network ){ 
+         sociallogin.login(network).then(function(data){
            // success callback
          },function(err){
            // failure callback
          })
 
  $scope.facebooklogout = function(){
-    hellofacebook.logout();
+    sociallogin.logout( network );
   }
 
 }
 ```
 
 #REST method
-'hellofacebook.login()' tries to login facebook and get the user profile.
+'sociallogin.login()' tries to login facebook and get the user profile.
  With the userprofile the method calls our REST method of application API.
  
  Example REST method for express application :
