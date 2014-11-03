@@ -49,7 +49,7 @@ function sampleCtrl( $scope , hellofacebook  ){
  Example REST method for express application :
  
  ```
-  app.post("/facebooklogin",function( req , res ){
+  app.post("/sociallogin",function( req , res ){
        // crete the user with retrieved user profile
        //create jwt token with _id of created user , send the token to the client
   });
