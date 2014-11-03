@@ -30,9 +30,20 @@ angular.module('sociallogin', [])
 
          var deferred = $q.defer();
 
+
          hello(network).login().then(function() {
             hello(network).api('/me').then(function(r) {
-               $http.post(serverurl + 'facebooklogin', {
+
+			      var data = {
+			            username: r.name,
+			            email: r.email,
+			            privider : network
+			      };
+		         
+		         data[network] = r;                                  
+
+
+               $http.post(serverurl + 'sociallogin', {
                   username: r.name,
                   email: r.email,
                   facebook: r
