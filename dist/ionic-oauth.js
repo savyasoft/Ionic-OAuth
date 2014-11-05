@@ -37,17 +37,13 @@ angular.module('sociallogin', [])
 			      var data = {
 			            username: r.name,
 			            email: r.email,
-			            privider : network
+			            provider : network
 			      };
 		         
 		         data[network] = r;                                  
 
 
-               $http.post(serverurl + 'sociallogin', {
-                  username: r.name,
-                  email: r.email,
-                  facebook: r
-               })
+               $http.post(serverurl + 'sociallogin', data)
                   .success(function(response) {
                      deferred.resolve(response);
                   })
